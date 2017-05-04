@@ -1,0 +1,19 @@
+<ion-view view-title="{{movie.title}}" hide-back-button="false">
+	<ion-content>
+	<div class="list card">
+		<div class="item">
+			
+			<ion-item><i class="icon ion-map"></i> {{movie.title}} </ion-item>
+			<ion-item><i class="icon ion-ios-star"></i> {{movie.vote_average}}/10</ion-item>
+			<ion-item><i class="icon ion-ios-calendar-outline"></i> {{movie.release_date}}</ion-item>
+			
+			<ion-item class="item-text-wrap"><i class="icon ion-ios-list-outline"></i> {{movie.overview}}</ion-item>
+			<div class="item item-image">
+				<img ng-src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+			</div>
+			
+		</div>
+	</div>
+	</ion-content>
+	
+</ion-view>

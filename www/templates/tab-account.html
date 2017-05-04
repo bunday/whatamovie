@@ -1,0 +1,32 @@
+<ion-view  view-title="Upcoming Movies" hide-back-button="true">
+  
+  <ion-content class="padding">
+  <ion-refresher on-refresh="getUpcMovies()" pulling-text="Pull to Refresh"></ion-refresher>
+     <label class = "item item-input item-select item-stable">
+      <div class = "input-label">
+           Sort By
+      </div>
+    
+      <select ng-change="resort(who)" ng-model="who">
+         <option ng-value="'0'">Popularity</option>
+         <option ng-value="'1'">Release Date</option>
+      </select>
+   </label>
+    <div class="list card">
+      <div class="item" ng-repeat="movie in movies" ui-sref="tab.detail({movie: movie.id})">
+        <h2> {{ movie.original_title }} </h2>
+        <p> Release date: {{movie.release_date}}</p>
+        
+        
+        <div class="item item-image" ng-if="movie.poster_path != null">
+          <img ng-src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+        </div>  
+        <div class="item item-image" ng-if="movie.poster_path == null">
+          <img ng-src="img/no_preview.png">
+        </div>  
+      </div>
+      
+    </div>
+    <ion-infinite-scroll on-infinite="getUpcMovies()" ng-if="total > page" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
