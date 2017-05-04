@@ -1,7 +1,7 @@
 {
     "name": "WhatMovie by Bundayy",
     "description": "First Ionic App by Bundayy",
-    "repository": "",
+    "repository": "https://github.com/bunday/whatamovie",
     "logo": "",
     "keywords": ["ionic", "bundayy", "movie"]
 }
